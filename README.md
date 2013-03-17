@@ -9,3 +9,8 @@ the text-size should scale down accordingly by 50%.
 to achieve this the container must have a max-width and a font-size of 1em. all containing elements must be sized
 relative to the containing div in em.
 
+usage
+=====
+```
+$('#container').responsiveText();
+```
