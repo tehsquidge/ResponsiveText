@@ -12,5 +12,22 @@ relative to the containing div in em.
 usage
 =====
 ```
+<div id="container">
+  <p>scale me down, sonny!</p>
+</div>
+```
+```
+#container {
+  font-size: 1em;
+	margin: auto;
+	max-width: 550px;
+}
+
+#container p {
+	font-size: 3em;
+}
+```
+
+```
 $('#container').responsiveText();
 ```
