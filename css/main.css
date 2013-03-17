@@ -128,7 +128,15 @@ h1, p { text-align: center }
 	height: auto;
 }
 
+#container {
+	font-size: 1em;
+	margin: auto;
+	max-width: 550px;
+}
 
+#container p {
+	font-size: 3em;
+}
 
 
 
