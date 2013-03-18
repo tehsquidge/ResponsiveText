@@ -31,3 +31,12 @@ usage
 ```
 $('#container').responsiveText();
 ```
+if you need to set the max-width via javscript (for example if your max-width in css needs to be a percentage) you
+can use this option:
+```
+$('#container').responsiveText({maxWidth: 500 });
+```
+also, if you need to set a min-width and cannot do it in css:
+```
+$('#container').responsiveText({minWidth: 100 });
+```
