@@ -1,17 +1,52 @@
-(function($){
- 
-    $.fn.responsiveText = function() {
-		
-		return this.each( function(){
-			var jNode = $( this );
+(function($) {
 
-			var resize = function() {
-				var percentage = jNode.width() / parseInt(jNode.css("max-width"));
-				jNode.css('font-size', percentage+'em');
-			}
-			resize();
-			$(window).bind('resize.responsiveText', resize );
-		});
+    $.responsiveText = function(element, options) {
+
+        var plugin = this;
+
+        plugin.settings = {}
+
+        var $element = $(element),
+             element = element;
+             
+        var defaults = {
+            minWidth: null,
+            maxWidth: null
+        }
+        
+        plugin.init = function() {
+            plugin.settings = $.extend({}, defaults, options);
+        }
+        
+        plugin.resize = function() {
+			    var maxWidth = ( plugin.settings.maxWidth == null )? parseInt($(element).css('max-width')) : parseInt(plugin.settings.maxWidth);
+			    
+			    var width = $(element).width();
+			    
+			    if( plugin.settings.minWidth != null && parseInt(plugin.settings.minWidth) > width ){
+					width = plugin.settings.minWidth;
+				}
+				var percentage = width / maxWidth;
+				$(element).css('font-size', percentage+'em');
+        }
+        
+        plugin.init();
+        
+        
+
     }
-     
+
+    $.fn.responsiveText = function(options) {
+
+        return this.each(function() {
+            if (undefined == $(this).data('responsiveText')) {
+                var plugin = new $.responsiveText(this, options);
+                $(this).data('responsiveText', plugin);
+            }
+			$(this).data('responsiveText').resize();
+			$(window).bind('resize.responsiveText', $(this).data('responsiveText').resize );
+        });
+
+    }
+
 })(jQuery);

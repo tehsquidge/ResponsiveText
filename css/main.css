@@ -93,6 +93,9 @@ textarea {
    Liam's custom styles
    ========================================================================== */
 
+.left { float: left; }
+.right { float: right; }
+
 body {
 	background-color: #122334;
 	color: #fff;
@@ -101,15 +104,26 @@ body {
 
 h1, p { text-align: center }
 
-#test {
+
+#example1 {
+	font-size: 1em;
+	margin: auto;
+	max-width: 550px; /* this is important as the percentage on which to scale the text is based off of this */
+}
+
+#example1 p {
+	font-size: 3em;
+}
+
+#example2 {
 	position: relative;
 	font-size: 1em;
-	max-width: 349px; /* this is important as the percentage on which to scale the text is based off of this */
+	max-width: 349px; 
 	margin: auto;
 	
 }
 
-#test p {
+#example2 p {
 	line-height: 1.25;
 	margin: 0;
 	text-align: center;
@@ -121,27 +135,22 @@ h1, p { text-align: center }
 	position: absolute;
 }
 
-#test img {
+#example2 img {
 	margin: auto;
 	display: block;
 	max-width: 100%;
 	height: auto;
 }
 
-#container {
-	font-size: 1em;
-	margin: auto;
-	max-width: 550px;
+/* what about percentages? */
+
+#example3 {
+	width: 
 }
 
-#container p {
-	font-size: 3em;
+#example3 div {
+	max-width: 50%; /* we'll need to assign the physical max-width in JS */
 }
-
-
-
-
-
 
 
 
