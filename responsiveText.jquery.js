@@ -13,6 +13,7 @@
             minWidth: null,
             maxWidth: null,
             minFontSize: 0.0,
+            maxFontSize: 0.0
         }
         
         plugin.init = function() {
@@ -28,6 +29,7 @@
 				}
 				var percentage = width / maxWidth;
 				percentage = (parseFloat(plugin.settings.minFontSize) > percentage)? plugin.settings.minFontSize : percentage;
+				percentage = (parseFloat(plugin.settings.maxFontSize) < percentage)? plugin.settings.maxFontSize : percentage;
 				$(element).css('font-size', percentage+'em');
         }
         
