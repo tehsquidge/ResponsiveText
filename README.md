@@ -31,6 +31,7 @@ usage
 ```
 $('#container').responsiveText();
 ```
+
 if you need to set the max-width via javscript (for example if your max-width in css needs to be a percentage) you
 can use this option:
 ```
@@ -39,4 +40,9 @@ $('#container').responsiveText({maxWidth: 500 });
 also, if you need to set a min-width and cannot do it in css:
 ```
 $('#container').responsiveText({minWidth: 100 });
+```
+
+If you would like to specify a percentage for the font not to scale below (for example not to scale below 50%) you can do this:
+```
+$('#container').responsiveText({minFontSize: 0.5});
 ```

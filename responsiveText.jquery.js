@@ -21,9 +21,8 @@
         
         plugin.resize = function() {
 			    var maxWidth = ( plugin.settings.maxWidth == null )? parseInt($(element).css('max-width')) : parseInt(plugin.settings.maxWidth);
-			    
 			    var width = parseInt($(element).width());
-			    
+
 			    if( plugin.settings.minWidth != null && parseInt(plugin.settings.minWidth) > width ){
 					width = parseInt(plugin.settings.minWidth);
 				}
