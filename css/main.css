@@ -145,14 +145,24 @@ h1, p { text-align: center }
 /* what about percentages? */
 
 #example3 {
-	width: 
+	font-size: 1em;
+	max-width: 550px; 
+	margin: 0 auto;
 }
 
 #example3 div {
 	max-width: 50%; /* we'll need to assign the physical max-width in JS */
 }
 
+#example4 {
+	margin: 0 auto;
+	max-width: 550px; 
+	font-size: 1em;
+}
 
+#example4 p {
+	font-size: 3em;
+}
 
 /* ==========================================================================
    Helper classes

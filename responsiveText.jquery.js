@@ -11,7 +11,8 @@
              
         var defaults = {
             minWidth: null,
-            maxWidth: null
+            maxWidth: null,
+            minFontSize: 0.0,
         }
         
         plugin.init = function() {
@@ -21,12 +22,13 @@
         plugin.resize = function() {
 			    var maxWidth = ( plugin.settings.maxWidth == null )? parseInt($(element).css('max-width')) : parseInt(plugin.settings.maxWidth);
 			    
-			    var width = $(element).width();
+			    var width = parseInt($(element).width());
 			    
 			    if( plugin.settings.minWidth != null && parseInt(plugin.settings.minWidth) > width ){
-					width = plugin.settings.minWidth;
+					width = parseInt(plugin.settings.minWidth);
 				}
 				var percentage = width / maxWidth;
+				percentage = (parseFloat(plugin.settings.minFontSize) > percentage)? plugin.settings.minFontSize : percentage;
 				$(element).css('font-size', percentage+'em');
         }
         
