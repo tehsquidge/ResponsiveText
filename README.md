@@ -1,7 +1,7 @@
 ResponsiveText
 ==============
 
-Rescale text depending on browser width.
+A jQuery plugin for rescale text depending on it's containers width.
 
 We rescale the text based on the max-width of its container. the general idea is that if we reduce the container 50%
 the text-size should scale down accordingly by 50%.
