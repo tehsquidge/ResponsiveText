@@ -1,3 +1,5 @@
+/* responsiveText - https://github.com/tehsquidge/ResponsiveText/ */
+
 (function($) {
 
     $.responsiveText = function(element, options) {
